@@ -5,7 +5,6 @@ import Header from './components/Header.jsx'
 function App() {
   return (
     <div className="relative w-full min-h-screen">
-      {/* SVG Background - Fixed */}
       <svg
         className="fixed top-0 left-0 w-full h-screen"
         viewBox="0 0 1200 1000"
@@ -26,11 +25,9 @@ function App() {
         <circle cx="150" cy="300" r="800" fill="#3B82F6" opacity="0.1" style={{ mixBlendMode: 'multiply' }} />
         <circle cx="1050" cy="300" r="800" fill="#A855F7" opacity="0.1" style={{ mixBlendMode: 'multiply' }} />
       </svg>
-
-      {/* Content on top */}
+  
       <div className="relative z-10">
         <Header />
-        {/* Add your quiz content here */}
       </div>
     </div>
   );
