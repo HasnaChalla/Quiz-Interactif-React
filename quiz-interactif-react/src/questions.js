@@ -1,4 +1,4 @@
-const questions = [
+export default [
   {
     id: "q1",
     text: "Which of the following definitions best describes React.js?",
@@ -7,7 +7,8 @@ const questions = [
       "A library for managing state in web applications.",
       "A framework to build user interfaces with help of imperative code.",
       "A library used for building mobile applications only."
-    ]
+    ],
+    answer:"A library to build user interfaces with help of declarative code.",
   },
   {
     id: "q2",
@@ -17,7 +18,9 @@ const questions = [
       "Creating responsive layouts in React applications.",
       "Handling errors within the application.",
       "Part of the Redux library for managing global state."
-    ]
+ ],
+    answer:"Enabling the use of state and other React features in functional components.",
+ 
   },
   {
     id: "q3",
@@ -27,7 +30,10 @@ const questions = [
       "A JavaScript library for building dynamic user interfaces.",
       "A specific HTML version that was explicitly created for React.",
       "A tool for making HTTP requests in a React application."
-    ]
+    ],
+    answer :"A JavaScript extension that adds HTML-like syntax to JavaScript.",
+
+
   },
   {
     id: "q4",
@@ -36,8 +42,10 @@ const questions = [
       "By defining a JavaScript function that returns a renderable value.",
       "By defining a custom HTML tag in JavaScript.",
       "By creating a file with a .jsx extension.",
-      "By using the 'new' keyword followed by the component name."
-    ]
+      'By using the "new" keyword followed by the component name.'
+    ],
+    answer: "By defining a JavaScript function that returns a renderable value.",
+
   },
   {
     id: "q5",
@@ -47,7 +55,8 @@ const questions = [
       "The lifecycle phase a React component is in.",
       "The overall status of a React application, including all props and components.",
       "A library for managing global state in React applications."
-    ]
+    ],
+    answer:"An object in a component that holds values and may cause the component to render on change.",
   },
   {
     id: "q6",
@@ -57,7 +66,8 @@ const questions = [
       "By using the for() loop to iterate over an array of data and returning JSX.",
       "By using the forEach() method to iterate over an array of data and returning JSX.",
       "By using the loop() method to iterate over an array of data and returning JSX."
-    ]
+    ],
+    answer:"By using the map() method to iterate over an array of data and returning JSX.",
   },
   {
     id: "q7",
@@ -67,8 +77,7 @@ const questions = [
       "Using a ternary operator.",
       "Using the && operator.",
       "Using an if-else statement."
-    ]
-  }
+    ],
+    answer:"Using the #if template syntax.",
+  },
 ];
-
-export default questions;
