@@ -1,6 +1,7 @@
 import './App.css';
 import './index.css'
 import Header from './components/Header.jsx'
+import Quiz from './components/Quiz.jsx';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
   
       <div className="relative z-10">
         <Header />
+        <main>        <Quiz />
+</main>
       </div>
     </div>
   );
