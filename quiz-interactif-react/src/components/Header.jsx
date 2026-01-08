@@ -1,5 +1,3 @@
-/** @format */
-
 import logo from "../images/quiz-logo.png";
 
 export default function Header() {
