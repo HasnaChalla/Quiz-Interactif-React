@@ -2,8 +2,6 @@ import './App.css';
 import './index.css'
 import Header from './components/Header.jsx'
 import Quiz from './components/Quiz.jsx';
-import Quiz from './components/Quiz.jsx';
-
 function App() {
   return (
     <div className="relative w-full min-h-screen">
@@ -28,7 +26,7 @@ function App() {
 
       <div className="relative z-10">
         <Header />
-        <Quiz/>
+        <Quiz />
       </div>
     </div>
   );
