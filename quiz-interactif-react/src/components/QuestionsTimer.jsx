@@ -1,12 +1,16 @@
 import { useEffect } from "react";
 
-function QuestionTimer({ timeout, onTimeout }) {
+const QuestionTimer = ({ index, nextQst }) => {
   useEffect(() => {
-    const timer = setTimeout(onTimeout, timeout);
+    const timer = setTimeout(nextQst, 5000);
     return () => clearTimeout(timer);
-  }, [timeout, onTimeout]);
+  }, [index, nextQst]);
 
-  return <hr className="timer-bar" />;
-}
+  return (
+    <div className="w-full h-2 bg-purple-900 rounded mb-4 overflow-hidden">
+      <div key={index} className="h-full bg-pink-400 timer-animation" />
+    </div>
+  );
+};
 
 export default QuestionTimer;
