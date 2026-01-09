@@ -1,61 +1,45 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
-function shuffle(array) {
-  return [...array].sort(() => Math.random() - 0.5);
-}
+const Answers = ({ answers, selectedAnswer, correctAnswer }) => {
+  const [etat, setEtat] = useState(""); // "selected" après un clic
+  const [answer, setAnswer] = useState(null); // réponse choisie
 
-function Answers({ answers, correctAnswer, onAnswer }) {
-  const shuffled = useRef(shuffle(answers));
-  const [selected, setSelected] = useState(null);
-  const [status, setStatus] = useState("idle"); 
+  const handleClick = (ans) => {
+    console.log(correctAnswer)
+    if (etat === "selected") return;
+    setAnswer(ans);
+    setEtat("selected");
+    selectedAnswer(ans); // remonte la réponse choisie au parent
+  };
 
-  function handleClick(answer) {
-    if (selected) return;
+  const getClass = (ans) => {
+    
+    if (etat !== "selected") 
+      return "bg-blue-500 hover:bg-orange-500";
 
-    setSelected(answer);
-    setStatus("selected"); 
+    if (ans !== answer) 
+      return "bg-blue-500 opacity-70";
 
-    setTimeout(() => {
-      if (answer === correctAnswer) {
-        setStatus("correct"); 
-      } else {
-        setStatus("wrong");
-      }
-    }, 500);
-
-    setTimeout(() => {
-      onAnswer(answer);
-    }, 1200);
-  }
-
-  function getButtonStyle(answer) {
-    if (status === "selected" && answer === selected)
-      return "bg-orange-400";
-
-    if (status === "correct" && answer === correctAnswer)
-      return "bg-green-600";
-
-    if (status === "wrong" && answer === selected)
-      return "bg-red-600";
-
-    return "bg-blue-500 hover:bg-blue-600";
-  }
+    return ans === correctAnswer
+      ? "bg-green-600"
+      : "bg-red-600";
+  };
 
   return (
-    <ul className="space-y-3">
-      {shuffled.current.map(answer => (
-        <li key={answer}>
+    <ul className="space-y-4">
+      {answers.map((ans) => (
+        <li key={ans}>
           <button
-            onClick={() => handleClick(answer)}
-            disabled={selected !== null}
-            className={`w-full py-2 rounded transition-colors ${getButtonStyle(answer)}`}
+            onClick={() => handleClick(ans)}
+            disabled={etat === "selected"} // désactive après clic
+            className={`w-full py-3 rounded-xl text-white font-medium transition-all duration-300 ${getClass(ans)}`}
           >
-            {answer}
+            {ans}
           </button>
         </li>
       ))}
     </ul>
   );
-}
+};
 
 export default Answers;
