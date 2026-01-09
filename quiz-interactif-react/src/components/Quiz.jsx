@@ -20,12 +20,12 @@ const Quiz = () => {
   }, [index]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br mb-5">
+    <div className="min-h-screen flex  justify-center bg-gradient-to-br mb-5">
   
   <div >
     
     {index < questions.length && (
-      <div className="bg-purple-800/90 p-6  rounded-2xl w-full max-w-xl shadow-xl">
+      <div className="bg-purple-800/90 p-6  rounded-2xl w-full max-w-xl shadow-xl h-90">
         <QuestionTimer nextQst={nextQst} index={index} />
         <Question question={questions[index]} saveResp={saveResp} />
       </div>
@@ -33,46 +33,43 @@ const Quiz = () => {
 
     {index === questions.length && (
       <div className="bg-gray-100/50 p-8 rounded-2xl max-w-xl mx-auto text-center space-y-6">
-  {/* Image circulaire */}
+
   <div className="flex justify-center">
+   
     <img
-      src={quizCompletedImg} // ton image ici
+      src={quizCompletedImg} 
       alt="Quiz Completed"
-      className="w-24 h-24 rounded-full object-cover border-4 border-white"
+      className="w-24 h-24 rounded-full object-cover border-4 border-gray-200"
     />
   </div>
 
-  {/* Titre */}
   <h2 className="text-3xl font-bold text-gray">Quiz Completed!</h2>
 
-  {/* Statistiques */}
   <div className="flex justify-around text-center">
-    {/* No response */}
     <div>
       <h2 className="text-4xl text-gray font-bold">
         {((questions.length - userAnswers.length) * 100 / questions.length).toFixed(0)}%
       </h2>
-      <p className="text-sm text-gray-200">No response</p>
+      <p className="text-sm text-gray">No response</p>
     </div>
 
-    {/* Correct */}
     <div>
       <h2 className="text-4xl text-gray font-bold">
         {(userAnswers.filter(q => q.res === "correct").length * 100 / questions.length).toFixed(0)}%
       </h2>
-      <p className="text-sm text-gray-200">Correct</p>
+      <p className="text-sm text-gray">Correct</p>
     </div>
 
-    {/* Wrong */}
     <div>
       <h2 className="text-4xl text-gray font-bold">
         {(userAnswers.filter(q => q.res === "wrong").length * 100 / questions.length).toFixed(0)}%
       </h2>
-      <p className="text-sm text-gray-200">Wrong</p>
+      <p className="text-sm text-gray">Wrong</p>
     </div>
   </div>
-
-  {/* Résumé détaillé */}
+<div className="flex items-center justify-center my-6">
+  <div className="w-2/3 h-px bg-black"></div>
+</div>
   <Summary userAnswer={userAnswers} />
 </div>
 
