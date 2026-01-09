@@ -2,6 +2,7 @@ import './App.css';
 import './index.css'
 import Header from './components/Header.jsx'
 import Quiz from './components/Quiz.jsx';
+import Quiz from './components/Quiz.jsx';
 
 function App() {
   return (
@@ -18,14 +19,13 @@ function App() {
             <stop offset="100%" style={{ stopColor: '#581C87', stopOpacity: 1 }} />
           </linearGradient>
         </defs>
-
         <rect width="1200" height="1000" fill="url(#bgGradient)" />
 
         <circle cx="600" cy="160" r="800" fill="#A855F7" opacity="0.1" style={{ mixBlendMode: 'screen' }} />
         <circle cx="150" cy="300" r="800" fill="#3B82F6" opacity="0.1" style={{ mixBlendMode: 'multiply' }} />
         <circle cx="1050" cy="300" r="800" fill="#A855F7" opacity="0.1" style={{ mixBlendMode: 'multiply' }} />
       </svg>
-  
+
       <div className="relative z-10">
         <Header />
         <Quiz/>
