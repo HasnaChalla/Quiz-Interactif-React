@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from "react";
 import Answers from "./Answers.jsx";
 
-const Question = ({ question, saveResp }) => {
+const Questions = ({ question, saveResp }) => {
 
   const shuffle = (array) => {
     const arr = [...array];
@@ -48,4 +48,4 @@ const Question = ({ question, saveResp }) => {
   );
 };
 
-export default Question;
+export default Questions;

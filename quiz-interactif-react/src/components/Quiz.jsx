@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import Question from "./Question";
+import Question from "./Questions";
 import questions from "../questions";
 import QuestionTimer from "./QuestionTimer";
 import Summary from "./Summary";
