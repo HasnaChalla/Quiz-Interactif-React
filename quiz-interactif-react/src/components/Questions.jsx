@@ -1,5 +1,5 @@
 import Answers from "./Answers";
-import QuestionTimer from "./QuestionTimer";
+import QuestionTimer from "./QuestionsTimer";
 
 function Question({ question, onAnswer, onSkip }) {
   return (
